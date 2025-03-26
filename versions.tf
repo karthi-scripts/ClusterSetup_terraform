@@ -1,4 +1,11 @@
-
+provider "kubernetes" {
+  config_path = "~/.kube/config"  # Path to your kubeconfig file
+}
+provider "helm" {
+  kubernetes {
+    config_path = "~/.kube/config"
+  }
+}
 terraform {
   required_version = ">= 0.12"
   required_providers {
@@ -9,6 +16,11 @@ terraform {
     kubernetes = {
       source  = "hashicorp/kubernetes"
       version = ">=2.7.1"
+    }
+     helm = {
+      source  = "hashicorp/helm"
+      version = ">= 2.7.1"
+
     }
     aws = {
       source  = "hashicorp/aws"
@@ -26,5 +38,11 @@ terraform {
       source  = "hashicorp/cloudinit"
       version = "~> 2.2.0"
     }
+     gitlab = {
+      source  = "gitlabhq/gitlab"
+      version = ">= 3.15.0"  # Specify the version constraint
+    }
   }
+
 }
+
