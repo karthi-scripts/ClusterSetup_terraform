@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # terraform-eks
 A sample repository to create EKS on AWS using Terraform.
 
@@ -32,3 +33,6 @@ Run `terraform plan` to see the configuration it creates when executed.
 ### Finally, Apply terraform configuation to create EKS cluster with VPC 
 
 `terraform apply`
+=======
+# ClusterSetup_terraform
+>>>>>>> fae9f599dd9ab36344c2b5a03fd3b25eac95c6e7
